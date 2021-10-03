@@ -2,12 +2,15 @@
 
 int main(){
 
-printf("Enter size of string : ");
-int size;
-scanf("%d",&size);
-char st[size];
 
-scanf("%s",st);
+char st[1000];
+int i;
+  
+printf("Enter the String: ");
+scanf("%s", st);
+int size;
+for (size = 0; st[size] != '\0'; ++size);
+//printf("%d" , size);
 char newst[size];
 newst[size]=st[size];
 for(int i=size-1 ; i>-1 ; i--){

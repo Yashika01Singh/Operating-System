@@ -26,7 +26,7 @@ run_q5:
 	@echo "=> Compiling file for q5"
 	gcc -o q5.out q5.c
 	@echo "=> Running compiled file \n \n"
-	./q4.out
+	./q5.out
 clear:
 	@echo "=> Clearing all compiled files"
 	rm  q1.out q2.out q3.out q4.out q5.out
