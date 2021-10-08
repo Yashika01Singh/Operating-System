@@ -13,7 +13,7 @@ void show(){
 
 
 if(head==NULL){
-    printf("empty queue");
+    printf("empty queue\n");
 
 }
 
@@ -38,27 +38,52 @@ void insert(){
     scanf("%s" , link->prog);
     link->next=head;
     head=link;
-    printf("Node inserted at the brginning successfuly");
+    printf("Node inserted at the brginning successfuly\n");
 
 }
  
 void delete(){
     
     if(head==NULL){
-        printf("cant delete from empty list :(");
+        printf("cant delete from empty list :(\n");
         return;
     }
-    struct node *deleted = head;
-    head=head->next;
-    free(deleted);
-    printf("Node deleted Successfully")
+    struct node *temp = head->next;
+    
+    free(head);
+    head=temp;
+    
     
 }
 
-void main(){
+int main(){
+    int query;
+    while(1){
+        printf("\nEnter operation 1.Insert \n2.Delete \n3.Show\n5.quit\n");
+   
+        scanf("%d" , &query);
+        if(query >5){
+            printf("Invalid choice try again");
+            continue;
+        }
+        if(query == 5){
+            break;
+        }
+        if(query == 1){
+            insert();
+        }
+        if(query == 2){
+            delete();
+        }
+        if(query == 3){
+            show();
+        }
+        
+    }
+
+    //deallocating memory
+    while(head!=NULL){
+        delete();
+    }
     
-    delete();
-    insert();
-    delete();
-   // delete();
 }

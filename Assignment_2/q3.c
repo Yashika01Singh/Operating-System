@@ -14,10 +14,12 @@ void division (int a,int b){
     answer = a/(float)b;
     printf("The result %d / %d is : %.2f " , a,b,answer);
 }
+
 void multiplication(int a,int b){
     long answer = a*b;
     printf("The result %d + %d is : %ld " , a,b,answer);
 }
+
 void exponentiation(int a,int b){
  if(b<0){
      printf("Please enter a positive number for power");
@@ -29,6 +31,8 @@ void exponentiation(int a,int b){
      }
 printf("The result %d ^ %d is : %ld " , a,b,answer);
 }
+
+
 
 int main(){
 

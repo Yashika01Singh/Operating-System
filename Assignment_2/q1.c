@@ -38,6 +38,7 @@ while(1){
         break;
     }
 
+
     printf("Ennter new number of columns for row %d :" , row);
     row--;
     scanf("%d",&size);

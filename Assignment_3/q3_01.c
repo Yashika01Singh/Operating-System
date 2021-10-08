@@ -117,7 +117,7 @@ int main(){
     
     //deleting the tree
     while(root!=NULL){
-        delete(root , root->val);
+        root=delete(root , root->val);
     }
     
 }

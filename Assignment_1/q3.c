@@ -3,7 +3,7 @@
 int main(){
 
 
-printf("Enter size for first variable: \n");
+printf("Enter size of array ( 1 for variable ): \n");
 int size;
 scanf("%d",&size);
 
@@ -19,6 +19,7 @@ for(int i=0 ; i<size ; i++){
     scanf("%d",&arr2[i]);
 }
 int temp[size];
+//=>swaping the two arrays 
 for(int i=0 ; i<size ; i++){
     temp[i]=arr1[i];
     arr1[i]=arr2[i];

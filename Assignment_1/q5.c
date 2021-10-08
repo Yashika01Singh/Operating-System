@@ -12,8 +12,9 @@ void Binary_Search (unsigned int array[] ,long size, unsigned int element ){
     long left= 0;
     long right = size-1;
     long middle;
+    //searching the element in the array
     while(left<=right){
-        middle = (left+right)/2 ;
+        middle = (left-right)/2 +right;
         if(array[middle]==element){
             printf("%u is present at position %ld in the sorted array "  ,element , middle+1 );
             return;
@@ -31,7 +32,7 @@ void Binary_Search (unsigned int array[] ,long size, unsigned int element ){
     }
     
     if(left>right){
-        printf("Element is not present in the array :(");
+        printf("Element is not present in the array");
         return;
     }
     printf("something happened that should never happen");
@@ -47,11 +48,12 @@ printf("Enter elements space seperated : ");
 for(int i=0 ; i<size ; i++){
     scanf("%u" , &array[i]);
 }
+//sorting the array in case input is not sorted
 qsort(array , size , sizeof(unsigned int) , cmp);
 unsigned int element;
 printf("Enter element to search in the array : \n");
 scanf("%u" , &element);
-//printf("hey %u ",element);
+//passing the array to binary search function
 Binary_Search(array,size,element);
 
 }
