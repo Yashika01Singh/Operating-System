@@ -42,7 +42,7 @@ Question 2 :
         2020
         Btech CSE
         5
-        7  
+        8
 
     part c : Stack as linked list
 
@@ -54,7 +54,7 @@ Question 2 :
         20
         2020
         Btech CSE
-        4
+        5
 
     part d : Queue as linked list
 
@@ -66,7 +66,7 @@ Question 2 :
         20
         2020
         Btech CSE
-        4
+        5
 
 Question 3:
 
@@ -83,7 +83,7 @@ Question 3:
 
 Question 5:
 
-    Run command : make q4
+    Run command : make q5
 
     input : one integer 1 for selection sort 2 for Bubble sort
     integer corresponding to number of elements, array of these many elements
@@ -94,6 +94,7 @@ Question 5:
     4 2 1 22 34
 
     Output  : Sorted array
+
 
 
 

@@ -66,6 +66,8 @@ void main(){
  for(int i=0 ; i<size ;i++){
      scanf("%d" , &array[i]);
  }
+
+ //sending to particular sort according to choice
  if(ch=='1')
  selection_sort(array,size);
  else if(ch=='2')

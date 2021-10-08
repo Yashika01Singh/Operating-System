@@ -117,21 +117,44 @@ void deletelast(){
     free(tail);
     tail=temp;
 }
+void find(){
+    struct node *temp =head;
+    printf("What roll number you want to search in records ");
+    int roll;
+    scanf("%d" ,&roll);
+    char a='0';
+    while(temp!=NULL){
+
+        if(temp->rollno==roll){
+            a='1';
+            break;
+        }
+        temp=temp->next;
+
+    }
+    if(a=='1'){
+        printf("Given roll no is present in the records");
+    }
+    else{
+        printf("Given roll no is not present in the records");
+    }
+
+}
 
 int main(){
 
     int query;
     
     while(1){
-        printf("%p %p\n" , head,tail);
+        
         printf("\nEnter operation \n1.Insert at beg \n2.Insert at last \n3.Delete from beg\n");
-        printf("4.Delete from last\n5.show\n6.show in reverse\n7.quit\n");
+        printf("4.Delete from last\n5.show\n6.show in reverse\n7.find\n8.exit\n");
         scanf("%d" , &query);
-        if(query >7){
+        if(query >8){
             printf("Invalid choice try again");
             continue;
         }
-        if(query == 7){
+        if(query == 8){
             break;
         }
         if(query == 1){
@@ -152,12 +175,16 @@ int main(){
         if(query==6){
             showrev();
         }
+        if(query==7){
+            find();
+        }
         
     }
+    //deallocating memory
     while(head!=NULL){
        
         deletefirst();
-        printf("%p %p\n" , head,tail);
+        
     }
     
     

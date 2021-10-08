@@ -41,7 +41,7 @@ while(temp!=NULL){
 
 
 void push(){
-
+//inserts at end of queue
 struct node *link = new();
 if(tail==NULL){
     head=link;
@@ -55,7 +55,7 @@ printf("Node inserted at the last successfuly\n");
 
 }
 void pop(){
-    
+    //insert from front of queue
     if(head==NULL){
         printf("Cant delete from empty list :(\n");
         return;
@@ -73,19 +73,42 @@ void pop(){
     
 }
 
+void find(){
+    struct node *temp =head;
+    printf("What roll number you want to search in records ");
+    int roll;
+    scanf("%d" ,&roll);
+    char a='0';
+    while(temp!=NULL){
+
+        if(temp->rollno==roll){
+            a='1';
+            break;
+        }
+        temp=temp->next;
+
+    }
+    if(a=='1'){
+        printf("Given roll no is present in the records");
+    }
+    else{
+        printf("Given roll no is not present in the records");
+    }
+
+}
 
 int main(){
 
     int query;
     
     while(1){
-        printf("\nEnter operation \n1.Enqueue \n2.Dequeue \n3.Show \n4.quit\n");
+        printf("\nEnter operation \n1.Enqueue \n2.Dequeue \n3.Show \n4.Find\n5.quit\n");
         scanf("%d" , &query);
-        if(query >4){
+        if(query >5){
             printf("Invalid choice try again");
             continue;
         }
-        if(query == 4){
+        if(query == 5){
             break;
         }
         if(query == 1){
@@ -99,6 +122,9 @@ int main(){
         if(query == 3){
             show();
             
+        }
+        if(query==4){
+            find();
         }
     }
     //freeing space 

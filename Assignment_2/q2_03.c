@@ -24,7 +24,7 @@ while(temp!=NULL){
 }
 
 void push(){
-
+    //push on top of stack
     struct node *link = (struct node*) malloc(sizeof(struct node));
     printf("\nEnter name :");
     scanf("%s" , link->name);
@@ -41,7 +41,7 @@ void push(){
 }
  
 void pop(){
-    
+    //deletes from top of stack
     if(head==NULL){
         printf("Cant pop from empty Stack :Underflow :(\n");
         return;
@@ -53,19 +53,41 @@ void pop(){
     
     
 }
+void find(){
+    struct node *temp =head;
+    printf("What roll number you want to search in records ");
+    int roll;
+    scanf("%d" ,&roll);
+    char a='0';
+    while(temp!=NULL){
 
+        if(temp->rollno==roll){
+            a='1';
+            break;
+        }
+        temp=temp->next;
+
+    }
+    if(a=='1'){
+        printf("Given roll no is present in the records");
+    }
+    else{
+        printf("Given roll no is not present in the records");
+    }
+
+}
 int main(){
 
     int query;
     
     while(1){
-        printf("\nEnter operation \n1.Push \n2.Pop \n3.Show \n4.quit\n");
+        printf("\nEnter operation \n1.Push \n2.Pop \n3.Show \n4.Find\n5.quit\n");
         scanf("%d" , &query);
-        if(query >4){
+        if(query >5){
             printf("Invalid choice try again");
             continue;
         }
-        if(query == 4){
+        if(query == 5){
             break;
         }
         if(query == 1){
@@ -80,6 +102,10 @@ int main(){
             show();
             
         }
+        if(query==4){
+            find();
+        }
+        
 
     }
     

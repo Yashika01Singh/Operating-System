@@ -26,7 +26,7 @@ while(temp!=NULL){
 }
 
 void insert(){
-
+    //insert node at begining of list
     struct node *link = (struct node*) malloc(sizeof(struct node));
     printf("\nEnter name :");
     scanf("%s" , link->name);
@@ -43,7 +43,7 @@ void insert(){
 }
  
 void delete(){
-    
+    //delete node from begining of list
     if(head==NULL){
         printf("cant delete from empty list :(\n");
         return;
@@ -55,12 +55,34 @@ void delete(){
     
     
 }
+void find(){
+    struct node *temp =head;
+    printf("What roll number you want to search in records ");
+    int roll;
+    scanf("%d" ,&roll);
+    char a='0';
+    while(temp!=NULL){
 
+        if(temp->rollno==roll){
+            a='1';
+            break;
+        }
+        temp=temp->next;
+
+    }
+    if(a=='1'){
+        printf("Given roll no is present in the records");
+    }
+    else{
+        printf("Given roll no is not present in the records");
+    }
+
+}
 int main(){
     int query;
     while(1){
-        printf("\nEnter operation 1.Insert \n2.Delete \n3.Show\n5.quit\n");
-   
+        printf("\nEnter operation \n1.Insert \n2.Delete \n3.Show\n4.Find\n5.quit\n");
+        //function to send to corresponding functions
         scanf("%d" , &query);
         if(query >5){
             printf("Invalid choice try again");
@@ -77,6 +99,9 @@ int main(){
         }
         if(query == 3){
             show();
+        }
+        if(query==4){
+            find();
         }
         
     }

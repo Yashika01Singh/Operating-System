@@ -1,4 +1,5 @@
 #include<stdio.h>
+//helper functions to print the result
 void addition(int a,int b){
     printf("The result %d + %d is : %d " , a,b,a+b);
 }
@@ -35,7 +36,7 @@ printf("The result %d ^ %d is : %ld " , a,b,answer);
 
 
 int main(){
-
+//void pointer each elemnt point to a particular function
 void (*ptr[])(int,int) = {addition,subtraction,division,multiplication,exponentiation};
 int a,b;
 printf("Enter two integers : \n");
@@ -52,7 +53,7 @@ if(choice>4){
     printf("Wrong choice\n");
     return(1);
 }
-
+//sending(a,b) to function store in ptr[i] where i = 0-4 and points to a different operation
 (*ptr[choice])(a,b);
 
 }
