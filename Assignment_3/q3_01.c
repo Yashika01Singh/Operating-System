@@ -83,6 +83,7 @@ int main(){
     int query;
     
     while(1){
+        
         printf("\nEnter operation 1.Insert \n2.Delete \n3.Minimum Element \n4.quit\n");
         scanf("%d" , &query);
         if(query >4){

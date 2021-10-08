@@ -1,23 +1,24 @@
 
 #!/bin/bash
+#storing number of days in each month in variable "days"
 case $2 in
-1) days=31
+01) days=31
 ;;
-2) days=28
+02) days=28
 ;;
-3) days=31
+03) days=31
 ;;
-4) days=30
+04) days=30
 ;;
-5) days=31
+05) days=31
 ;;
-6) days=30
+06) days=30
 ;;
-7) days=31
+07) days=31
 ;;
-8) days=31
+08) days=31
 ;;
-9) days=30
+09) days=30
 ;;
 10) days=31
 ;;
@@ -29,7 +30,8 @@ case $2 in
 ;;
 esac
 
-if [[ $days -ne $1 ]];
+#checking for invalid date
+if [[ $days -le $1 ]];
 then 
     
     echo "invalid date $1 for $2 month"
@@ -39,4 +41,5 @@ fi
 echo
 echo "The calender for given month and year is: "
 echo
+#passing month and year in cal function
 cal  $2 $3
