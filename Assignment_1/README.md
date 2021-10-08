@@ -45,7 +45,7 @@ Question 4 :
 Question 5 :
 
     Run Command  : make q5
-    Input        : a string <1000 characters
+    Input        : integer denoting size of array, corresponding integer     array , integer to search
     Sample Input => 
     8
     1 20 80 5555 10400 32000 4294967290 4294967295 
