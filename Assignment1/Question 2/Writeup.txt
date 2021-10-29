@@ -1,0 +1,20 @@
+﻿File A.c 
+ This contains the function A which take a number input from user then pass it to function B.
+
+File main.asm
+ This contains the function which has an integer passed parameter stored in rdi,
+ There is a while loop which moves value of dil register in var and store it in stack 
+ which is then popped to rdi and printed using write system call, dil register stores the last 8 bits of rdi.
+ We then right shift rdi by 8 bits using shr rdi,8 . 
+ ALso we push and pop rdi in the stack as while printing value of rdi gets changed so we do this to save the earlier value. 
+ Then at last we move address of extern function c in r8 
+ and pop rcx and push r8 to alter the return address so the function return to c()
+
+File C.c
+This contains the function C which is called by B() , 
+this prints “This is C” to ensure we have reached C then it exits.
+
+
+input : an integer
+Execute instuction : make run   to run the whole program
+

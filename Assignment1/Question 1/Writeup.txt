@@ -1,0 +1,17 @@
+﻿There is a function computeAverage which takes input section and then reads the csv file and print output for that corresponding section.
+Working of computeAverage()
+1. First open the file using open, if there is error then fd is less than zero which prints error and exits the function. 
+2. If open is successful  then calculate size of the file using st object of struct stat. Fstat takes argument  st and gets information about the file, get size of file using st.st_size.
+3. Create a variable buffer of that size and read the file and store it in buffer.   Use read to read the file, if there is error during reading file is less than zero which prints message and exit the function.
+4. If read is successful using strtok we split buffer using “\n” as delimiter, Each row is stored in iter then use strok_r to split iter using “,” as delimiter . Thus we get all 8 entries of the row one by one in iter2 . Compare second entry of the row and if it doesn’t belong to the section then we break the loop otherwise marks are added to the corresponding assignment in the assignment array also there is a var number keeping track of students.
+5. Then print marks in that assignment  divided by number of students in that section
+
+
+Part 1 Using Fork() : 
+        Use fork to create a child process that calls computeAverage() for Section A and parent process waits for child process to complete using waitpid then calls computeAverage() for Section B. If fork fails then error message is printed and function ends. Parent waits for child process to end using waitpid system calls which takes argument pid and status
+
+
+Part 2 Using Thread
+        Use pthread_create to create a new thread ptid  and use this thread to call helper function which call computAverage for sec a and main thread computes average for sec B. Both threads save average in the total variable and to compute final average we divide each entry in total by 2.
+
+
